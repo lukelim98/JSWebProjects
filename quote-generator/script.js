@@ -15,8 +15,10 @@ function loading() {
 
 // Hide Loading
 function complete() {
-    loader.hidden = true;
-    quoteContainer.hidden = false;
+    if (!loader.hidden) {
+        loader.hidden = true;
+        quoteContainer.hidden = false;
+    }
 }
 
 // Show New Quote
@@ -51,7 +53,8 @@ async function getQuotes() {
         apiQuotes = await response.json();
         newQuote();
     } catch (error) {
-        // Catch Error Here
+        getQuotes();
+        console.log('Sorry, no quote', error)
     }
 }
 
