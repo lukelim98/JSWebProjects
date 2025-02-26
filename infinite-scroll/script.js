@@ -4,9 +4,8 @@ const loader = document.getElementById('loader');
 let photosArray = [];
 
 // Unslpash API
-require('dotenv').config();
 const count = 10;
-const apiKey = process.env.UNSPLASH_API_KEY;
+const apiKey = 'RlOiYcrOfcbs5dnMe06oJC7Fc_bPSBirnKqlz7G5Irg';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 // Helper Function to Set Attributes on DOM Elements
